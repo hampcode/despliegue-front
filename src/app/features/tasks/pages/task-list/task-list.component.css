@@ -83,29 +83,39 @@
 }
 
 .task-list-filters .search-box input,
-.task-list-filters select {
+.task-list-filters select,
+.task-list-filters .filter-group input[type="date"] {
   height: 48px;
   font-size: 1rem;
   border-radius: 0.5rem;
   border: 1px solid #cbd5e1;
   background: #f7fafc;
-  padding: 0 1rem 0 2.5rem;
   transition: border 0.2s;
   box-sizing: border-box;
 }
 
 .task-list-filters .search-box input {
-  padding-left: 2.5rem;
+  padding: 0 1rem 0 2.5rem;
 }
 
 .task-list-filters select {
-  padding-left: 1rem;
+  padding: 0 1rem;
   padding-right: 2.5rem;
 }
 
-.task-list-filters .search-box input:focus {
+.task-list-filters .filter-group input[type="date"] {
+  padding: 0 1rem;
+  color: #22223b;
+}
+
+.task-list-filters .search-box input:focus,
+.task-list-filters .filter-group input[type="date"]:focus {
   border-color: #4f46e5;
   outline: none;
+}
+
+.task-list-filters .filter-group input[type="date"]:focus {
+  background: #fff;
 }
 
 .task-list-filters .search-box i {
@@ -115,24 +125,6 @@
   transform: translateY(-50%);
   color: #6b7280;
   font-size: 1.1rem;
-}
-
-.task-list-filters .filter-group input[type="date"] {
-  height: 48px;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #cbd5e1;
-  background: #f7fafc;
-  padding: 0 1rem;
-  transition: border 0.2s;
-  box-sizing: border-box;
-  color: #22223b;
-}
-
-.task-list-filters .filter-group input[type="date"]:focus {
-  border-color: #4f46e5;
-  outline: none;
-  background: #fff;
 }
 
 .table-container {
@@ -195,13 +187,15 @@
   background: #fef9c3;
   color: #b45309;
 }
+
 .status-badge.IN_PROGRESS {
   background: #dbeafe;
   color: #2563eb;
 }
+
 .status-badge.COMPLETED {
-  background: #bbf7d0;
-  color: #15803d;
+  background: #dcfce7;
+  color: #166534;
 }
 
 .action-btn {
@@ -209,16 +203,15 @@
   border: none;
   cursor: pointer;
   color: #4f46e5;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   margin-right: 0.5rem;
-  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+  transition: color 0.2s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 0.6rem;
-  box-shadow: 0 1px 4px rgba(30, 41, 59, 0.04);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0.5rem;
 }
 
 .action-btn:last-child {
@@ -228,14 +221,13 @@
 .action-btn:hover {
   background: #f3f4f6;
   color: #3730a3;
-  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.10);
 }
 
 .pagination {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-top: 2.2rem;
+  margin-top: 2rem;
 }
 
 .pagination-btn {
@@ -243,10 +235,10 @@
   color: #1e293b;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  font-weight: 600;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s;
 }
 
 .pagination-btn.active,
@@ -257,34 +249,35 @@
 
 @media (max-width: 900px) {
   .task-list-container {
-    padding: 1.2rem 0.5rem;
+    padding: 1.5rem 1rem;
   }
+  
   .task-list-header {
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
     text-align: center;
   }
+  
   .task-list-actions {
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.5rem;
   }
+  
   .task-list-filters {
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 0.5rem;
   }
+  
   .table th, .table td {
-    padding: 0.7rem;
+    padding: 0.75rem;
   }
+  
   .task-list-filters .search-box {
-    max-width: 100%;
+    width: 100%;
   }
+  
   .task-list-filters .search-box input,
-  .task-list-filters select {
-    height: 44px;
-    font-size: 0.98rem;
-  }
   .task-list-filters .filter-group input[type="date"] {
-    height: 44px;
-    font-size: 0.98rem;
+    width: 100%;
   }
 } 
